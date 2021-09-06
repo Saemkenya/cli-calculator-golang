@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"./calc"
+	"github.com/Saemkenya/cli-calculator-golang/calc"
 )
 
 func check(args []string) error {
