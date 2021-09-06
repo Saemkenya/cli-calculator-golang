@@ -11,6 +11,11 @@ import (
 func check(args []string) error {
 
 	if len(args) < 1 {
+		calc.NewAddCommand().Print()
+		calc.NewSubCommand()
+		calc.NewMultCommand()
+		calc.NewDivCommand()
+		calc.NewSquareCommand()
 		return errors.New("A subcommand is necessary here chief ...")
 	}
 	cmds := []calc.ICalculator{
