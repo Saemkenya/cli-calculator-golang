@@ -39,14 +39,19 @@ func (dc *DivCommand) Init(args []string) error {
 	return dc.fs.Parse(args)
 }
 
-func (dc *DivCommand) Run() error {
+func (dc *DivCommand) Run() (result float64, err error) {
+	// fmt.Println(dc.num1, dc.num2)
+	err = nil
+	result = dc.num1 / dc.num2
 	if dc.num2 == 0 {
 		fmt.Println("Can't perform a division by zero(0)")
+		return
 	} else if dc.show == true {
 		fmt.Printf("Default formula used to divide %f and %f\n", dc.num1, dc.num2)
-		fmt.Printf("Result %f\n", dc.num1/dc.num2)
+		fmt.Printf("Result %f\n", result)
+		return
 	} else {
-		fmt.Printf("Result %f\n", dc.num1/dc.num2)
+		fmt.Printf("Result %f\n", result)
 	}
-	return nil
+	return
 }

@@ -39,12 +39,14 @@ func (sc *SubCommand) Init(args []string) error {
 	return sc.fs.Parse(args)
 }
 
-func (sc *SubCommand) Run() error {
+func (sc *SubCommand) Run() (result float64, err error) {
+	err = nil
+	result = sc.num1 - sc.num2
 	if sc.show == true {
 		fmt.Printf("Default formula used to subtract %f and %f\n", sc.num1, sc.num2)
-		fmt.Printf("Result %f\n", sc.num1-sc.num2)
+		fmt.Printf("Result %f\n", result)
 	} else {
-		fmt.Printf("Result %f\n", sc.num1-sc.num2)
+		fmt.Printf("Result %f\n", result)
 	}
-	return nil
+	return
 }

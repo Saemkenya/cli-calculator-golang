@@ -39,12 +39,14 @@ func (mc *MultCommand) Init(args []string) error {
 	return mc.fs.Parse(args)
 }
 
-func (mc *MultCommand) Run() error {
+func (mc *MultCommand) Run() (result float64, err error) {
+	err = nil
+	result = mc.num1 * mc.num2
 	if mc.show == true {
 		fmt.Printf("Default formula used to multiply %f and %f\n", mc.num1, mc.num2)
-		fmt.Printf("Result %f\n", mc.num1*mc.num2)
+		fmt.Printf("Result %f\n", result)
 	} else {
-		fmt.Printf("Result %f\n", mc.num1*mc.num2)
+		fmt.Printf("Result %f\n", result)
 	}
-	return nil
+	return
 }

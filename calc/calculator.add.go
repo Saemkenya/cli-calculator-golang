@@ -39,12 +39,14 @@ func (ac *AddCommand) Init(args []string) error {
 	return ac.fs.Parse(args)
 }
 
-func (ac *AddCommand) Run() error {
+func (ac *AddCommand) Run() (result float64, err error) {
+	result = ac.num1 + ac.num2
 	if ac.show == true {
 		fmt.Printf("Default formula used to add %f and %f\n", ac.num1, ac.num2)
-		fmt.Printf("Result %f\n", ac.num1+ac.num2)
+		fmt.Printf("Result %f\n", result)
 	} else {
-		fmt.Printf("Result %f\n", ac.num1+ac.num2)
+		fmt.Printf("Result %f\n", result)
 	}
-	return nil
+	err = nil
+	return
 }

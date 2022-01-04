@@ -1,5 +1,11 @@
 # Command Line Interface calculator implementation with the Go-lang flag package
 
+## Run the tests
+navigate to the calc dir to run the tests on the controller
+cd calc
+
+go test -tags=unit -v
+
 ## The following commands should work outta the box:
 
 ### To show available subcommands

@@ -40,14 +40,17 @@ func (sc *SquareCommand) Init(args []string) error {
 	return sc.fs.Parse(args)
 }
 
-func (sc *SquareCommand) Run() error {
+func (sc *SquareCommand) Run() (result float64, err error) {
+	err = nil
+	result = math.Sqrt(sc.num1)
+	fmt.Println(result)
 	if sc.num2 > 0 {
 		fmt.Println("Num 2 arg is not required in square-root func")
 	} else if sc.show == true {
 		fmt.Printf("Default formula used to find square-root of %v\n", sc.num1)
-		fmt.Printf("Result %f\n", math.Sqrt(sc.num1))
+		fmt.Printf("Result %f\n", result)
 	} else {
-		fmt.Printf("Result %f\n", math.Sqrt(sc.num1))
+		fmt.Printf("Result %f\n", result)
 	}
-	return nil
+	return
 }
